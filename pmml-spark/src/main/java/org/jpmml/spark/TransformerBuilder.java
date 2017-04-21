@@ -139,10 +139,10 @@ public class TransformerBuilder {
 
 		if(this.exploded){
 			ColumnExploder columnExploder = new ColumnExploder(pmmlTransformer.getOutputCol());
+            //works wrong with dot in column name
+//			ColumnPruner columnPruner = new ColumnPruner(ScalaUtil.singletonSet(pmmlTransformer.getOutputCol()));
 
-			ColumnPruner columnPruner = new ColumnPruner(ScalaUtil.singletonSet(pmmlTransformer.getOutputCol()));
-
-			PipelineModel pipelineModel = new PipelineModel(null, new Transformer[]{pmmlTransformer, columnExploder, columnPruner});
+			PipelineModel pipelineModel = new PipelineModel(null, new Transformer[]{pmmlTransformer, columnExploder});
 
 			return pipelineModel;
 		}

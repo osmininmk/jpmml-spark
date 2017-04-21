@@ -27,7 +27,7 @@ public class DataFrameUtil {
 	public String escapeColumnName(String name){
 
 		// A column name that contains special characters needs to be surrounded by backticks
-		if(name.indexOf('.') > -1){
+		if(name.indexOf('.') > -1 && !name.contains("`")){
 			return ("`" + name + "`");
 		}
 

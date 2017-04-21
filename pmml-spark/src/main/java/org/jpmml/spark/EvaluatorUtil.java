@@ -26,7 +26,10 @@ import java.io.InputStream;
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.Source;
 
+import org.dmg.pmml.FieldName;
+import org.dmg.pmml.MiningField;
 import org.dmg.pmml.PMML;
+import org.dmg.pmml.VisitorAction;
 import org.jpmml.evaluator.Evaluator;
 import org.jpmml.evaluator.ModelEvaluatorFactory;
 import org.jpmml.model.ImportFilter;
